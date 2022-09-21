@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GUI Calculator</title>
+</head>
+
+<body>
+    <h1>GUI Calculator</h1>
+    <p>This is a calculator GUI application by <b><a href="http://github.com/jaspersn">jaspersn</a></b>.</p>
+    <!-- Table to hold calculator -->
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="result" onkeydown="clearhandler(event)" onkeypress="return keypresshandler(event)" oncontextmenu="pastewarning()">
+            </td>
+        </tr>
+        <tr> 
+            <td>
+                <input type="button" value="c" onclick="clr()">
+            </td>
+            <td>
+                <input type="button" value="/" onclick="calc((x, y) => {return x/y})">
+            </td>
+            <td>
+                <input type="button" value="*" onclick="calc((x, y) => {return x*y})">
+            </td>
+            <td>
+                <input type="button" value="-" onclick="calc((x, y) => {return x/1 - y/1})">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="7" onclick="concat(7)">
+            </td>
+            <td>
+                <input type="button" value="8" onclick="concat(8)">
+            </td>
+            <td>
+                <input type="button" value="9" onclick="concat(9)">
+            </td>
+            <td rowspan="2">
+                <input type="button" value="+" onclick="calc((x, y) => {return x/1 + y/1})">
+            </td>
+        </tr>
+            <td>
+                <input type="button" value="4" onclick="concat(4)">
+            </td>
+            <td>
+                <input type="button" value="5" onclick="concat(5)">
+            </td>
+            <td>
+                <input type="button" value="6" onclick="concat(6)">
+            </td>
+        <tr>
+            <td>
+                <input type="button" value="1" onclick="concat(1)">
+            </td>
+            <td>
+                <input type="button" value="2" onclick="concat(2)">
+            </td>
+            <td>
+                <input type="button" value="3" onclick="concat(3)">
+            </td>
+            <td rowspan="2">
+                <input type="button" value="=" onclick="eq()">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="0" onclick="concat(0)">
+            </td>
+            <td>
+                <input type="button" value="." onclick="concat('.')">
+            </td>
+        </tr>
+    </table>
+</body>
+<script src="script.js"></script>
+</html>
